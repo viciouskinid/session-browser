@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:">
+<title>Session Browser</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div id="tabs" role="tablist" aria-label="Websites"></div>
+  <form id="toolbar" autocomplete="off">
+    <button type="button" id="accounts" aria-label="Accounts" aria-pressed="true" title="Show or hide accounts">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M9.5 5v14"/></svg>
+    </button>
+    <button type="button" id="back" aria-label="Back" title="Back"></button>
+    <button type="button" id="forward" aria-label="Forward" title="Forward"></button>
+    <button type="button" id="reload" aria-label="Reload" title="Reload"></button>
+    <div id="addrwrap">
+      <button type="button" id="home" hidden aria-label="Return to this tab's default address"></button>
+      <input id="address" type="text" spellcheck="false" aria-label="Address" placeholder="Search or enter address">
+    </div>
+    <button type="button" id="downloads" aria-label="Downloads" aria-pressed="false" title="Downloads (Ctrl+J)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>
+      <span class="bar" hidden><i></i></span>
+    </button>
+    <button type="button" id="searchbtn" aria-label="Search" title="Search (Ctrl+K)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+    </button>
+    <button type="button" id="keys" aria-label="Saved passwords" aria-pressed="false" title="Saved passwords">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5L19 4M16 7l2.5 2.5M13.5 9.5L15.5 11.5"/></svg>
+    </button>
+    <button type="button" id="sessions" aria-label="Saved sessions" aria-pressed="false" title="Saved sessions: sign-ins that sites can reuse">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.4-3.2 2.7-5 5.5-5s5.1 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.4 0 3.9 1.4 4.3 3.8"/></svg>
+    </button>
+    <button type="button" id="menu" aria-label="Menu" aria-haspopup="menu" title="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>
+    </button>
+  </form>
+  <aside id="sidebar" aria-label="Accounts for this website"></aside>
+  <main id="stage"></main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="sscrim" class="scrim" hidden><div id="settings" role="dialog" aria-modal="true" aria-labelledby="set-title"></div></div>
+  <div id="qscrim" class="scrim" hidden><div id="search" role="dialog" aria-modal="true" aria-label="Search"></div></div>
+  <div id="scrim" hidden><form id="dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-title"></form></div>
+  <script src="themes.js"></script>
+  <script src="engines.js"></script>
+  <script src="appearance.js"></script>
+  <script src="build.js"></script>
+  <script src="ui.js"></script>
+  <script src="settings.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

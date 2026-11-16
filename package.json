@@ -1,0 +1,18 @@
+{
+  "name": "session-browser",
+  "version": "0.5.0",
+  "description": "A desktop browser with website tabs and multiple isolated logins per website.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test --test-concurrency=1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "45.3.1",
+    "playwright-core": "1.65.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

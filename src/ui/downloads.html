@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:">
+<title>Downloads</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="downloads.css">
+</head>
+<body>
+  <button type="button" id="close" class="x" aria-label="Close panel" title="Close (Esc)">×</button>
+  <section id="tab-downloads" class="tab">
+    <header>
+      <h1>Downloads</h1>
+      <button type="button" id="folder" class="lnk" title="Open the Downloads folder">Open folder</button>
+      <button type="button" id="clear" class="lnk" title="Remove finished downloads from this list. Files are kept.">Clear all</button>
+    </header>
+    <div class="search"><input id="q" type="search" placeholder="Search downloads" aria-label="Search downloads" autocomplete="off" spellcheck="false"></div>
+    <div id="list" role="list"></div>
+    <footer id="dlfoot" aria-live="polite" hidden></footer>
+  </section>
+  <section id="tab-passwords" class="tab" hidden>
+    <header><h1>Saved passwords</h1><button type="button" id="pwclear" class="lnk danger">Remove all</button></header>
+    <p class="note" id="pwnote"></p>
+    <div id="pwlist" class="scroll" role="list"></div>
+  </section>
+  <section id="tab-sessions" class="tab" hidden>
+    <header><h1>Saved sessions</h1></header>
+    <p class="note">A saved session keeps a sign-in (Google, Apple, Facebook…) so any website that asks you to continue with it can use it without signing in again. Passwords are not stored here.</p>
+    <div class="addrow"><select id="prov" aria-label="Sign-in provider"></select><button type="button" id="addsess" class="btn">Add session</button></div>
+    <div id="sesslist" class="scroll" role="list"></div>
+  </section>
+  <div id="msg" role="status" aria-live="polite"></div>
+  <script src="appearance.js"></script>
+  <script src="downloads.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
